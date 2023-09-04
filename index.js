@@ -1,3 +1,4 @@
+import path from 'node:path'
 import color from 'picocolors'
 import * as p from '@clack/prompts'
 import { setTimeout } from 'node:timers/promises'
@@ -55,7 +56,7 @@ async function main() {
 	const s = p.spinner()
 
 	s.start('Creating project')
-	await createProjectDir(project.path)
+	await createProjectDir(path.join(process.cwd(), project.path))
 	await installDependencies(project.path, project.type, project.packageManager)
 	s.stop('Project created')
 
