@@ -14,7 +14,7 @@ export async function installDependencies(path, projectType, packageManager) {
 
 	switch (projectType) {
 		case 'next':
-			cmd = `cd ${path} && npx create-next-app@latest --example https://github.com/matheuspergoli/next-template ./`
+			cmd = `cd ${path} && pnpm dlx create-next-app@latest --example https://github.com/matheuspergoli/next-template ./`
 			break
 
 		case 'react-ts':
